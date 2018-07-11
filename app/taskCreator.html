@@ -1,0 +1,48 @@
+<div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+<div id="titleHeaderDiv">
+    <div id="title">
+        <span id="tracker">Task Tracker</span><br/>
+        <span id="version">v2.0</span>
+    </div>
+</div>
+<div id="splitter">
+    <table id="tablex">
+        <tbody>
+            <tr>
+                <td style="width: 50%">
+                    <div id="dummyDiv"></div>
+                    <div id="createTaskDiv">
+                        <span><h1>Create a Task</h1></span><br/>
+                        <span class="bold">Task Name</span><br/>
+                        <span><input type="text" id="taskName" [(ngModel)]="taskName"><br/></span><br/>
+                        <span class="bold">Date</span><br/>
+                        <span><input type="text" id="date" name="date"><br/></span><br/>
+                        <span class="bold">Assigned To</span><br/>
+                        <span><input type="text" id="assigned" [(ngModel)]="assignee"></span><br/>
+                        <span class="pull-right"><br/><button id="submit" (click) ="createTask()">submit</button></span>
+                    </div>
+                </td>
+                <td style="width: 50%">
+                    <div id="dummyDiv"></div>
+                    <div id="taskDivTable">
+                        <span><h1>Existing Tasks</h1></span><br/>
+                        <div id="taskDivInnerTable">
+                            <table id="taskTable">
+                                <tbody>
+                                    <tr *ngFor = "let task of tasks">
+                                        <td>{{task.name}}</td>
+                                        <td>{{task.date}}</td>
+                                        <td>{{task.assignee}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
